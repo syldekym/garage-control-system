@@ -1,0 +1,59 @@
+<script src="tcal.js" type="text/javascript"></script>
+<script>
+function onlyNum(evt) {
+  // Usage: onKeyPress="return onlyNum(event)"
+  evt = (evt) ? evt : window.event;
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    var status = 'This field accepts numbers only!';
+    alert(status);
+    return false;
+  }
+  var status = '';
+  return true;
+}
+</script>
+<script>
+function validate(form1,email) {
+ 
+   var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+   var address = document.forms[form1].elements[email].value;
+   if(reg.test(address) == false) {
+ 
+      alert('Invalid Email Address');
+      return false;
+   }
+}
+</script>
+</head>
+<body>
+
+<center>
+
+</div>
+<div style="width:480px;height:350px;border:1px #7a7b78 solid;float:center;margin-center:20px ">
+<br/>
+<div style="width:460px; background-color:#b0c248;border:1px #b0c248 solid;border-top-right-radius:8px;border-top-left-radius:8px;
+border-bottom-right-radius:8px;border-bottom-right-radius:8px">
+
+<font color="#435000"><h1><b>ADMINSTRATORS LOGIN FORM</b></h1></font>
+<div style="width:400px;background-color:#c8d384;border:1px #ebf5ac solid;border-top-right-radius:8px;border-top-left-radius:8px;
+border-bottom-right-radius:8px;border-bottom-left-radius:8px; ">
+</div>
+
+<HTML>
+<HEAD>
+<TITLE>GARAGE CONTROL SYSTEM</TITLE>
+<BODY bgcolor="tomato">
+<CENTER>
+
+<FORM method="POST" action="adminlog.php">
+ID NUMBER<BR><BR><input type="number" name="idno" placeholder="ID NUMBER"required><br><BR>
+PASSWORD<BR><BR><input type="password" name="password"placeholder="PASSWORD" required><br><BR>
+<input type="submit"VALUE="LOGIN"><BR>
+<BR><a href="index.html"><img src="image1.png"WIDTH="40"HEIGHT="40">HOME</a><BR>
+</form>
+</BODY>
+</HEAD>
+</HTML>

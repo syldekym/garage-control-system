@@ -1,0 +1,66 @@
+<script src="tcal.js" type="text/javascript"></script>
+<script>
+function onlyNum(evt) {
+  // Usage: onKeyPress="return onlyNum(event)"
+  evt = (evt) ? evt : window.event;
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    var status = 'This field accepts numbers only!';
+    alert(status);
+    return false;
+  }
+  var status = '';
+  return true;
+}
+</script>
+<script>
+function validate(form1,email) {
+ 
+   var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+   var address = document.forms[form1].elements[email].value;
+   if(reg.test(address) == false) {
+ 
+      alert('Invalid Email Address');
+      return false;
+   }
+}
+</script>
+</head>
+<body>
+
+<center>
+
+</div>
+<div style="width:480px;height:400px;border:1px #7a7b78 solid;float:center;margin-center:20px ">
+<br/>
+<div style="width:460px; background-color:#b0c248;border:1px #b0c248 solid;border-top-right-radius:8px;border-top-left-radius:8px;
+border-bottom-right-radius:8px;border-bottom-right-radius:8px">
+
+<font color="#435000"><h1><b>CUSTOMERS REGISTRATION FORM</b></h1></font>
+<div style="width:400px;background-color:#c8d384;border:1px #ebf5ac solid;border-top-right-radius:8px;border-top-left-radius:8px;
+border-bottom-right-radius:8px;border-bottom-left-radius:8px; ">
+</div>
+
+<HTML>
+<HEAD>
+<TITLE>GARAGE CONTROL SYSTEM</TITLE>
+<BODY bgcolor="tomato">
+<CENTER>
+<img src="IMG12.jpg" maxlength="140" maxhieght="140">
+<FORM method="post" action="customerreg.php" name="form1" id="form1" onsubmit="javascript:return validate('form1','emp_email');">
+<H1><B></B><H1>
+
+
+<input type="text" name="idno" placeholder="ID NUMBER"onKeyPress="return onlyNum(event)" required><br><BR>
+<input type="text" name="fname"placeholder="FIRST NAME"required><br><BR>
+<input type="text" name="lname"placeholder="LAST NAME"required><br><BR>
+<input type="text" name="phoneno" placeholder="Ex:0783744743"onKeyPress="return onlyNum(event)" required><br><BR>
+<input type="password" name="password"placeholder="PASSWORD" required><br><BR>
+<input type="submit" value="REGISTER"><br>
+if already registered click <a href="customerlog.html">here </a> to login<br>
+<a href = "customersdet.html"><input type="button" value="back"></a>
+</form>
+</BODY>
+</HEAD>
+</HTML>
